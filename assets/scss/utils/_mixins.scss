@@ -1,0 +1,105 @@
+@mixin btn-gradient($gradient: $gradient-btn, $gradient-hover: $gradient-btn-hover) {
+    background: $gradient;
+    border: none;
+    border-radius: $border-radius-btn;
+    color: $color-white;
+    font-family: $font-display;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: $space-sm $space-lg;
+    transition: $transition-base;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: $gradient-hover;
+        color: $color-white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+@mixin glass-panel($bg: $color-bg-card, $border: $color-border-card) {
+    background: $bg;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid $border;
+    border-radius: $border-radius-card;
+}
+
+@mixin glow-hover($color: $color-primary, $intensity: 0.25) {
+    transition: $transition-base;
+
+    &:hover {
+        box-shadow: 0 0 30px rgba(56, 189, 248, $intensity), 0 8px 32px rgba(0, 0, 0, 0.4);
+        border-color: rgba(56, 189, 248, 0.5);
+    }
+}
+
+@mixin temp-badge($bg-color, $text-color: $color-white) {
+    background: $bg-color;
+    color: $text-color;
+    border-radius: $border-radius-tag;
+    padding: $space-xs $space-md;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    font-family: $font-display;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+@mixin section-title {
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-primary;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 60%;
+        height: 2px;
+        background: $gradient-btn;
+        border-radius: 2px;
+    }
+}
+
+@mixin decorative-line($width: 60px, $color: $color-primary) {
+    content: "";
+    display: block;
+    width: $width;
+    height: 2px;
+    background: linear-gradient(90deg, $color, transparent);
+    margin: $space-sm auto 0;
+    border-radius: 2px;
+}
+
+@mixin mobile {
+    @media (max-width: 420px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 421px) and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
