@@ -13,12 +13,12 @@ html {
   background-color: #000000;
 }
 
-
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png")
+    repeat;
   animation: starDrift 80s linear infinite;
   z-index: 0;
   pointer-events: none;
@@ -34,7 +34,6 @@ body::before {
   }
 }
 
-// El contenido queda por encima de las estrellas
 main,
 header,
 footer,

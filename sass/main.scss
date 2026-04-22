@@ -5,12 +5,9 @@
 @use './abstracts/_mixins' as *;
 
 @use './base/_general' as *;
-@use './base/_reset' as *;
 @use './base/_typography' as *;
 
-@use './components/_btn' as *;
 @use './components/_card' as *;
-@use './components/_title' as *;
 @use './components/_carousel' as *;
 
 @use './layout/_header' as *;
