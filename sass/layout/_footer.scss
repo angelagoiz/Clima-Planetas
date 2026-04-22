@@ -1,0 +1,80 @@
+// FOOTER
+.footer {
+  background: rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(56, 189, 248, 0.1);
+  padding: 100px 20px;
+
+  &-brand {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+  }
+
+  &-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  &-heading {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+  }
+
+  &-link {
+    color: #ffffff;
+    font-size: 0.9rem;
+    display: block;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #38bdf8;
+      padding-left: 10px;
+    }
+  }
+
+  &-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 100px 0 100px;
+  }
+
+  &-copy {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+// Footer de Bootstrap (usado en index.html con bg-black)
+footer {
+  p,
+  li,
+  span,
+  h5 {
+    color: #ffffff !important;
+  }
+
+  a {
+    color: #ffffff !important;
+
+    &:hover {
+      color: #38bdf8 !important;
+    }
+  }
+}
+
+// SCROLL BUTTONS
+.scroll-btn {
+  font-size: 0.7rem;
+  padding: 10px 20px;
+}

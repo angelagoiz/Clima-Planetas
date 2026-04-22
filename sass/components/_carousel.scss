@@ -1,11 +1,9 @@
-
-
 .planet-carousel {
-  border-radius: $border-radius-card;
+  border-radius: 100px;
   overflow: hidden;
   max-height: 380px;
   border: 1px solid rgba(56, 189, 248, 0.12);
-  box-shadow: $shadow-card;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   position: relative;
 
   &__item {
@@ -21,19 +19,19 @@
 
   &__caption {
     background: linear-gradient(transparent, rgba(2, 5, 16, 0.9));
-    padding: $space-xl $space-xl $space-lg;
+    padding: 100px 20px 40px;
 
     h5 {
-      font-family: $font-display;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       font-size: 0.85rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: $color-primary;
+      color: black;
     }
 
     p {
-      font-size: $font-size-sm;
-      color: $color-text-muted;
+      font-size: 0.875rem;
+      color: #6c757d;
     }
   }
 
@@ -50,41 +48,31 @@
       opacity: 1;
     }
   }
-
-  @include mobile {
-    max-height: 220px;
-
-    &__item {
-      height: 220px;
-    }
-  }
 }
-
-// ============================================
-// COMPONENT: _planet-detail.scss
-// Vista de detalle del planeta
-// ============================================
 
 .planet-detail {
   min-height: 70vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: $space-xxl 0;
+  padding: 100px 0;
 
   &__card {
-    @include glass-panel;
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    box-shadow: $shadow-card;
+    box-shadow: 0 0 20px darkblue;
   }
 
   &__image-wrap {
     width: 100%;
-    padding: $space-xxl $space-xxl $space-lg;
-    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+    padding: 100px 20px 40px;
+    background: radial-gradient(
+      circle at center,
+      rgba(56, 189, 248, 0.08) 0%,
+      transparent 70%
+    );
     text-align: center;
     display: flex;
     align-items: center;
@@ -101,77 +89,22 @@
   }
 
   &__body {
-    padding: $space-xl $space-xxl $space-xxl;
+    padding: 100px 20px 40px;
     text-align: center;
-
-    @include mobile {
-      padding: $space-lg $space-lg $space-xl;
-    }
   }
 
   &__name {
-    font-family: $font-display;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: clamp(1.4rem, 4vw, 2rem);
     font-weight: 900;
-    color: $color-primary;
+    color: black;
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: $space-lg;
+    margin-bottom: 100px;
     text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
   }
 
   &__temp {
-    margin-bottom: $space-lg;
-  }
-
-  &__desc {
-    color: $color-text-muted;
-    line-height: 1.9;
-    font-size: $font-size-sm;
-    text-align: left;
-    margin-bottom: $space-xl;
-  }
-
-  &__back-btn {
-    @include btn-gradient(
-      linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15)),
-      $gradient-btn
-    );
-    border: 1px solid rgba(56, 189, 248, 0.25) !important;
-    color: $color-primary !important;
-
-    &:hover {
-      color: $color-white !important;
-    }
-  }
-}
-
-@keyframes floatPlanet {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-14px) rotate(1deg); }
-}
-
-// ============================================
-// COMPONENT: _section-divider.scss
-// Separador visual de secciones
-// ============================================
-
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: $space-lg;
-  margin: $space-xxl 0 $space-xl;
-  color: $color-text-muted;
-  font-family: $font-display;
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  &::before,
-  &::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+    margin-bottom: 100px;
   }
 }

@@ -1,0 +1,32 @@
+.temp-box {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgb(73, 55, 138);
+  color: #ffffff;
+  display: none;
+
+  &.visible {
+    display: block;
+    animation: tempReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
+@keyframes tempReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Texto intro principal
+main > section > p,
+main > .container > p {
+  color: #ffffff;
+}

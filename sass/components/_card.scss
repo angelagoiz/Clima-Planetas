@@ -1,22 +1,14 @@
-// ============================================
-// COMPONENT: _place-card.scss
-// Tarjetas de planetas — BEM
-// ============================================
-
-// BLOQUE: place-card
 .place-card {
-  @include glass-panel;
-  @include glow-hover;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: $transition-base;
+  transition: transform 0.3s ease;
   cursor: pointer;
 
   &:hover {
     transform: translateY(-6px) scale(1.01);
-    background: $color-bg-card-hover;
+    background: rgba(129, 140, 248, 0.12);
   }
 
   // ELEMENTO: imagen
@@ -24,11 +16,15 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.06), transparent 70%);
+    background: radial-gradient(
+      circle at center,
+      rgba(56, 189, 248, 0.06),
+      transparent 70%
+    );
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: $space-md;
+    padding: 100px 20px;
   }
 
   &__image {
@@ -44,45 +40,44 @@
 
   // ELEMENTO: cuerpo
   &__body {
-    padding: $space-lg;
+    padding: 100px 20px;
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: $space-sm;
+    gap: 100px;
   }
 
   // ELEMENTO: nombre
   &__name {
-    font-family: $font-display;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: $color-primary;
-    margin-bottom: $space-xs;
+    color: rgba(129, 140, 248, 0.12);
+    margin-bottom: 100px;
   }
 
   // ELEMENTO: descripción
   &__desc {
-    color: $color-text-muted;
-    font-size: $font-size-sm;
+    color: rgba(129, 140, 248, 0.07);
+    font-size: 0.9rem;
     line-height: 1.6;
     flex: 1;
   }
 
   // ELEMENTO: temp badge
   &__temp {
-    margin-top: $space-sm;
+    margin-top: 100px;
   }
 
   // ELEMENTO: footer de la card (botón)
   &__footer {
-    padding: 0 $space-lg $space-lg;
+    padding: 0 20px 100px;
     margin-top: auto;
   }
 
   &__btn {
-    @include btn-gradient;
     width: 100%;
     text-align: center;
     display: block;
@@ -91,58 +86,53 @@
   // MODIFICADORES de temperatura
   &--hot {
     .place-card__temp-badge {
-      @include temp-badge(rgba(239, 68, 68, 0.25), #fca5a5);
       border: 1px solid rgba(239, 68, 68, 0.3);
     }
   }
 
   &--warm {
     .place-card__temp-badge {
-      @include temp-badge(rgba(249, 115, 22, 0.25), #fdba74);
       border: 1px solid rgba(249, 115, 22, 0.3);
     }
   }
 
   &--mild {
     .place-card__temp-badge {
-      @include temp-badge(rgba(34, 197, 94, 0.2), #86efac);
       border: 1px solid rgba(34, 197, 94, 0.3);
     }
   }
 
   &--cold {
     .place-card__temp-badge {
-      @include temp-badge(rgba(56, 189, 248, 0.2), #7dd3fc);
       border: 1px solid rgba(56, 189, 248, 0.3);
     }
   }
 
   &--frozen {
     .place-card__temp-badge {
-      @include temp-badge(rgba(129, 140, 248, 0.2), #c4b5fd);
       border: 1px solid rgba(129, 140, 248, 0.3);
     }
   }
 }
 
-// BADGE de temperatura (reutilizable)
+// BADGE de temperatura 
 .place-card__temp-badge {
-  @include temp-badge(rgba(56, 189, 248, 0.15), $color-primary);
   font-size: 0.72rem;
 }
 
-// FACT CARD (dato curioso)
+// FACT CARD 
 .fact-card {
-  @include glass-panel(rgba(129, 140, 248, 0.07), rgba(129, 140, 248, 0.15));
   height: 100%;
-  padding: $space-xl $space-lg;
+  padding: 100px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: $space-md;
-  transition: $transition-base;
+  gap: 100px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 
   &:hover {
     background: rgba(129, 140, 248, 0.12);
@@ -155,17 +145,43 @@
   }
 
   &__title {
-    font-family: $font-display;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
-    color: $color-accent;
+    color: rgba(129, 140, 248, 0.15);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   &__text {
-    color: $color-text-muted;
-    font-size: $font-size-sm;
-    line-height: 1.7;
+    color: rgba(129, 140, 248, 0.07);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+// BADGE de temperatura (reutilizable)
+.fact-card__temp-badge {
+  font-size: 0.72rem;
+}
+
+
+.card {
+  background-color: rgba(255, 255, 255, 0.70) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  .card-body {
+    p,
+    .text-white {
+      color: #111111 !important;
+      font-weight: 700;
+    }
+
+    h5,
+    .titulo-planeta {
+      color: #0a2a8c !important;
+    }
   }
 }

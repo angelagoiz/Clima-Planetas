@@ -1,0 +1,186 @@
+.place-card {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-6px) scale(1.01);
+    background: rgba(129, 140, 248, 0.12);
+  }
+
+  // ELEMENTO: imagen
+  &__image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: radial-gradient(
+      circle at center,
+      rgba(56, 189, 248, 0.06),
+      transparent 70%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.08) rotate(2deg);
+  }
+
+  // ELEMENTO: cuerpo
+  &__body {
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 100px;
+  }
+
+  // ELEMENTO: nombre
+  &__name {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(129, 140, 248, 0.12);
+    margin-bottom: 100px;
+  }
+
+  // ELEMENTO: descripción
+  &__desc {
+    color: rgba(129, 140, 248, 0.07);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  // ELEMENTO: temp badge
+  &__temp {
+    margin-top: 100px;
+  }
+
+  // ELEMENTO: footer de la card (botón)
+  &__footer {
+    padding: 0 20px 100px;
+    margin-top: auto;
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  // MODIFICADORES de temperatura
+  &--hot {
+    .place-card__temp-badge {
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+  }
+
+  &--warm {
+    .place-card__temp-badge {
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+  }
+
+  &--mild {
+    .place-card__temp-badge {
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+  }
+
+  &--cold {
+    .place-card__temp-badge {
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+  }
+
+  &--frozen {
+    .place-card__temp-badge {
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+  }
+}
+
+// BADGE de temperatura 
+.place-card__temp-badge {
+  font-size: 0.72rem;
+}
+
+// FACT CARD 
+.fact-card {
+  height: 100%;
+  padding: 100px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    background: rgba(129, 140, 248, 0.12);
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+
+  &__icon {
+    font-size: 2rem;
+    display: block;
+  }
+
+  &__title {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(129, 140, 248, 0.15);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: rgba(129, 140, 248, 0.07);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+// BADGE de temperatura 
+.fact-card__temp-badge {
+  font-size: 0.72rem;
+}
+
+
+.card {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  .card-body {
+    p {
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    h5,
+    .titulo-planeta {
+      color: #38bdf8 !important;
+    }
+  }
+}
