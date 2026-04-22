@@ -1,0 +1,27 @@
+
+
+
+@use './abstracts/_variables' as *;
+@use './abstracts/_mixins' as *;
+
+@use './base/_general' as *;
+@use './base/_reset' as *;
+@use './base/_typography' as *;
+
+@use './components/_btn' as *;
+@use './components/_card' as *;
+@use './components/_title' as *;
+@use './components/_carousel' as *;
+
+@use './layout/_header' as *;
+@use './layout/_container' as *; 
+@use './layout/_footer' as *;
+
+@use './pages/_home' as *;
+
+@use './vendors/_bootstrap' as *;
+@use './vendors/_animate' as *;
+
+
+
+
